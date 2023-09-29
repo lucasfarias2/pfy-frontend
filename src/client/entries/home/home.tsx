@@ -1,4 +1,4 @@
-import Home from '@/shared/views/Home';
 import { hydrate } from '@packlify/client';
+import HomeRouter from '@/shared/views/home/HomeRouter';
 
-hydrate(Home, true);
+hydrate(HomeRouter, true);

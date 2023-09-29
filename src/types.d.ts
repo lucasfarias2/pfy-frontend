@@ -5,6 +5,10 @@ declare global {
     type?: TDeviceType;
   }
 
+  export interface IDarkMode {
+    mode: 'light' | 'dark';
+  }
+
   export interface IComponent {
     children?: React.ReactNode;
     className?: string;
