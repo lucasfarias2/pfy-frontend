@@ -1,7 +1,7 @@
 const Create = ({ device }: { device: IDevice }) => {
   return (
     <div>
-      <div className="py-8 px-16 bg-cyan-700 shadow-lg relative">
+      <div className="py-8 px-16 bg-neutral-700 shadow-lg relative">
         <h1 className="text-4xl text-white">Create a new project</h1>
         <p className="text-lg text-white/80">Fill our the information to get started with a new project</p>
       </div>

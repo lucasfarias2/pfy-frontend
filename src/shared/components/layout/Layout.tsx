@@ -17,7 +17,7 @@ const Layout = ({ children }: IComponent) => {
         })}
       >
         <div className="flex items-center text-2xl brand justify-center mb-2 text-black/70">
-          <PacklifyLogo className="text-2xl" />
+          <PacklifyLogo className="text-[30px] mr-2" />
           Packlify
         </div>
 

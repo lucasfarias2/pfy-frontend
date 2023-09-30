@@ -10,22 +10,12 @@
     "strict": true,
     "isolatedModules": true,
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@/components/*": [
-        "src/shared/components/*"
-      ]
+      "@/*": ["src/*"],
+      "@/components/*": ["src/shared/components/*"]
     }
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ],
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules", "dist"],
   "ts-node": {
     "esm": true
   }
