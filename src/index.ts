@@ -2,6 +2,7 @@ import { createServer } from '@packlify/core';
 import cookieParser from 'cookie-parser';
 import { config } from 'dotenv';
 import express from 'express';
+import favicon from 'serve-favicon';
 import apiRouter from './api/router.js';
 import appRouter from './server/router.js';
 
@@ -14,6 +15,7 @@ const port = process.env.PORT || 3000;
     const app = await createServer();
 
     app.use(express.json());
+    app.use(favicon('public/favicon.ico'));
     app.use(cookieParser());
 
     app.use('/api', apiRouter);

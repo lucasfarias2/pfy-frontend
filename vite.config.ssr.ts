@@ -7,5 +7,9 @@ export default defineConfig({
       name: 'home',
       path: '/src/server/entries/home.tsx',
     },
+    {
+      name: 'cloud',
+      path: '/src/server/entries/cloud.tsx',
+    },
   ]),
 });

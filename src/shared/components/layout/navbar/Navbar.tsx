@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className="bg-neutral-800 h-[74px] flex items-center shadow-md justify-between px-16 relative z-50 text-white">
       <div className="flex items-center">
-        <a href="/" className="logo flex items-center text-neutral-100 mr-16">
+        <a href="/" className="logo flex items-center text-white mr-16">
           <Logo className="text-[40px] mr-2 fill-white" />
           Packlify Cloud
         </a>

@@ -2,7 +2,7 @@ import Layout from '@/shared/components/layout/Layout';
 import { DarkModeContext } from '@/shared/contexts/DarkModeContext';
 import { DeviceContext } from '@/shared/contexts/DeviceContext';
 
-const Page = ({ children, initialState, device }: IProps) => {
+const Page = ({ children, device }: IProps) => {
   return (
     <DeviceContext.Provider value={{ type: device?.type }}>
       <DarkModeContext.Provider value={{ mode: 'light' }}>
@@ -15,7 +15,7 @@ const Page = ({ children, initialState, device }: IProps) => {
 interface IProps extends IComponent {
   withNavbar?: boolean;
   initialState?: IInitialState;
-  device: IDevice;
+  device?: IDevice;
   darkMode?: boolean;
 }
 

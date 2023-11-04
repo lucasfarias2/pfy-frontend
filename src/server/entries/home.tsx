@@ -1,6 +1,6 @@
 import { renderComponent } from '@packlify/core';
-import HomeRouter from '@/shared/views/home/HomeRouter';
+import Home from '@/shared/views/home/Home';
 
 export function render(url: string, props: IInitialState) {
-  return renderComponent({ Component: HomeRouter, url, props, withRouter: true });
+  return renderComponent({ Component: Home, url, props, withRouter: true });
 }
