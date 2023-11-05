@@ -2,29 +2,21 @@ import classNames from 'classnames';
 
 interface SolutionProps {
   title: string;
-  description: string;
   titleClassName?: string;
 }
 
-function Solution({ title, description, titleClassName }: SolutionProps) {
+function Solution({ title, titleClassName }: SolutionProps) {
   return (
-    <a
-      href="/"
-      className={classNames('bg-white rounded-lg p-4 mr-4 mb-4 w-[200px] border')}
-      style={{ maxWidth: '300px' }}
-    >
-      <div className="h-full">
-        <div className={classNames('font-medium text-xl brand leading-none mb-2', titleClassName)}>{title}</div>
-        <div className="leading-tight text-sm mb-4 text-gray-700">{description}</div>
-      </div>
-    </a>
+    <div className={classNames('rounded-lg p-4 mr-4 mb-2 w-[200px] bg-white border')} style={{ maxWidth: '300px' }}>
+      <div className={classNames('font-medium text-xl brand leading-none', titleClassName)}>{title}</div>
+    </div>
   );
 }
 
 export default function Home() {
   return (
-    <div className="pb-8 md:px-16 px-8 bg-white">
-      <div className="h-[90px] flex items-center justify-between">
+    <div className="pb-8 bg-white">
+      <div className="h-[90px] flex items-center justify-between md:px-16 px-8">
         <div className="flex items-center">
           <img src="/logo.png" alt="Packlify" className="h-[36px]" />
           <div className="ml-16">
@@ -55,7 +47,7 @@ export default function Home() {
           </a>
         </div>
       </div>
-      <div className="py-12 flex flex-col">
+      <div className="py-12 flex flex-col md:px-16 px-8 shadow-md relative">
         <h1 className="text-5xl font-medium md:text-6xl tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-cyan-500 via-30% via-rose-500 to-orange-400">
           Welcome to <strong>the</strong> <strong>platform</strong> for <strong>startups</strong>
         </h1>
@@ -74,46 +66,18 @@ export default function Home() {
           </button>
         </div>
       </div>
-      <div className="py-8 flex flex-col">
-        <h1 className="text-2xl font-medium border-t pt-8">Solutions</h1>
-        <div className="mt-4 flex flex-wrap">
-          <Solution
-            title="Cloud"
-            description="Multi-cloud deployment platform. Deploy and manage with ease."
-            titleClassName="text-rose-500"
-          />
-          <Solution
-            title="Toolkits"
-            description="SDK's and application starters to automatically set up your new projects."
-            titleClassName="text-blue-500"
-          />
-          <Solution
-            title="Growth"
-            description="Integrate with the best marketing tools and growth enhancers."
-            titleClassName="text-green-500"
-          />
-          <Solution
-            title="Data"
-            description="Integrate with the best analytics, A/B testing and big data tools."
-            titleClassName="text-purple-500"
-          />
-          <Solution title="Forge" description="Fully-fledged project management." titleClassName="text-pink-500" />
-          <Solution title="Accounts" description="Single account for all solutions." titleClassName="text-cyan-500" />
-          <Solution
-            title="Performance"
-            description="Integrate with the best monitoring tools and performance enhancers."
-            titleClassName="text-teal-600"
-          />
-          <Solution
-            title="AI"
-            description="Improve your projects with AI integrations."
-            titleClassName="text-orange-500"
-          />
-          <Solution
-            title="Gaming"
-            description="The best solutions for game services."
-            titleClassName="text-emerald-600"
-          />
+      <div className="py-8 md:px-16 px-8 bg-neutral-100">
+        <h1 className="text-2xl font-medium">Solutions</h1>
+        <div className="mt-4">
+          <Solution title="Cloud" titleClassName="text-rose-500" />
+          <Solution title="Toolkits" titleClassName="text-blue-500" />
+          <Solution title="Growth" titleClassName="text-green-500" />
+          <Solution title="Data" titleClassName="text-purple-500" />
+          <Solution title="Forge" titleClassName="text-pink-500" />
+          <Solution title="Accounts" titleClassName="text-cyan-500" />
+          <Solution title="Performance" titleClassName="text-teal-600" />
+          <Solution title="AI" titleClassName="text-orange-500" />
+          <Solution title="Gaming" titleClassName="text-emerald-600" />
         </div>
       </div>
     </div>
