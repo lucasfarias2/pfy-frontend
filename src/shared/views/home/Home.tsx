@@ -10,7 +10,7 @@ function Solution({ title, description, titleClassName }: SolutionProps) {
   return (
     <a
       href="/"
-      className={classNames('bg-white rounded-lg p-4 mr-4 mb-4 w-[200px] border shadow-sm')}
+      className={classNames('bg-white rounded-lg p-4 mr-4 mb-4 w-[200px] border')}
       style={{ maxWidth: '300px' }}
     >
       <div className="h-full">
@@ -89,12 +89,12 @@ export default function Home() {
           />
           <Solution
             title="Growth"
-            description="Integrate with the best monitoring tools and performance enhancers."
+            description="Integrate with the best marketing tools and growth enhancers."
             titleClassName="text-green-500"
           />
           <Solution
             title="Data"
-            description="Integrate with the best monitoring tools and performance enhancers."
+            description="Integrate with the best analytics, A/B testing and big data tools."
             titleClassName="text-purple-500"
           />
           <Solution title="Forge" description="Fully-fledged project management." titleClassName="text-pink-500" />
@@ -109,7 +109,11 @@ export default function Home() {
             description="Improve your projects with AI integrations."
             titleClassName="text-orange-500"
           />
-          <Solution title="Gaming" description="Single account for all solutions." titleClassName="text-emerald-600" />
+          <Solution
+            title="Gaming"
+            description="The best solutions for game services."
+            titleClassName="text-emerald-600"
+          />
         </div>
       </div>
     </div>
