@@ -2,14 +2,14 @@ import classnames from 'classnames';
 import { useContext } from 'react';
 import { DarkModeContext } from '@/shared/contexts/DarkModeContext';
 import PacklifyLogo from '../packlify-logo/PacklifyLogo';
-import Navbar from './navbar/Navbar';
 
-const Layout = ({ children }: IComponent) => {
+export default function Layout({ children }: ILayoutProps) {
   const darkMode = useContext(DarkModeContext);
+
+  // const Navbar = navbar ? <div>Navbar</div> : null;
 
   return (
     <>
-      <Navbar />
       <main className={classnames({ dark: darkMode })}>{children}</main>
       <footer
         className={classnames('h-100 border-t bg-white p-6 text-center text-xs text-gray-400 shadow-sm', {
@@ -27,6 +27,8 @@ const Layout = ({ children }: IComponent) => {
       </footer>
     </>
   );
-};
+}
 
-export default Layout;
+interface ILayoutProps extends IComponent {
+  navbar?: boolean;
+}
