@@ -85,31 +85,31 @@ export default function Home() {
           <Solution
             title="Toolkits"
             description="SDK's and application starters to automatically set up your new projects."
-            titleClassName="text-sky-600"
+            titleClassName="text-blue-500"
           />
           <Solution
             title="Growth"
             description="Integrate with the best monitoring tools and performance enhancers."
-            titleClassName="text-gray-500"
+            titleClassName="text-green-500"
           />
           <Solution
             title="Data"
             description="Integrate with the best monitoring tools and performance enhancers."
-            titleClassName="text-gray-500"
+            titleClassName="text-purple-500"
           />
-          <Solution title="Forge" description="Fully-fledged project management." titleClassName="text-green-700" />
+          <Solution title="Forge" description="Fully-fledged project management." titleClassName="text-pink-500" />
           <Solution title="Accounts" description="Single account for all solutions." titleClassName="text-cyan-500" />
           <Solution
             title="Performance"
             description="Integrate with the best monitoring tools and performance enhancers."
-            titleClassName="text-gray-500"
+            titleClassName="text-teal-600"
           />
           <Solution
             title="AI"
             description="Improve your projects with AI integrations."
             titleClassName="text-orange-500"
           />
-          <Solution title="Gaming" description="Single account for all solutions." titleClassName="text-cyan-500" />
+          <Solution title="Gaming" description="Single account for all solutions." titleClassName="text-emerald-600" />
         </div>
       </div>
     </div>
