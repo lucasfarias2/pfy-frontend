@@ -1,18 +1,5 @@
 import classNames from 'classnames';
 
-interface SolutionProps {
-  title: string;
-  titleClassName?: string;
-}
-
-function Solution({ title, titleClassName }: SolutionProps) {
-  return (
-    <div className={classNames('rounded-lg p-4 mr-4 mb-2 w-[200px] bg-white border')} style={{ maxWidth: '300px' }}>
-      <div className={classNames('font-medium text-xl brand leading-none', titleClassName)}>{title}</div>
-    </div>
-  );
-}
-
 export default function Home() {
   return (
     <div className="pb-8 bg-white">
@@ -68,17 +55,7 @@ export default function Home() {
       </div>
       <div className="py-8 md:px-16 px-8 bg-neutral-100">
         <h1 className="text-2xl font-medium">Solutions</h1>
-        <div className="mt-4">
-          <Solution title="Cloud" titleClassName="text-rose-500" />
-          <Solution title="Toolkits" titleClassName="text-blue-500" />
-          <Solution title="Growth" titleClassName="text-green-500" />
-          <Solution title="Data" titleClassName="text-purple-500" />
-          <Solution title="Forge" titleClassName="text-pink-500" />
-          <Solution title="Accounts" titleClassName="text-cyan-500" />
-          <Solution title="Performance" titleClassName="text-teal-600" />
-          <Solution title="AI" titleClassName="text-orange-500" />
-          <Solution title="Gaming" titleClassName="text-emerald-600" />
-        </div>
+        <div className="mt-4"></div>
       </div>
     </div>
   );

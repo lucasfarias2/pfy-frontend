@@ -9,27 +9,14 @@
     "isolatedModules": true,
     "skipLibCheck": true,
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@/components/*": [
-        "src/shared/components/*"
-      ]
+      "@/*": ["src/*"],
+      "@/components/*": ["src/shared/components/*"]
     }
   },
-  "include": [
-    "**/*.ts",
-    ".env"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ],
+  "include": ["**/*.ts", ".env"],
+  "exclude": ["node_modules", "dist"],
   "ts-node": {
     "esm": true,
-    "require": [
-      "tsconfig-paths/register",
-      "dotenv/config"
-    ]
+    "require": ["tsconfig-paths/register", "dotenv/config"]
   }
 }
