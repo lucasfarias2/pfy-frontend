@@ -1,6 +1,7 @@
 import { FcGoogle } from 'react-icons/fc';
 import { SiGithub } from 'react-icons/si';
 import Button from '@/shared/components/button/Button';
+import Input from '@/shared/components/input/Input';
 import Page from '@/shared/components/page/Page';
 import Footer from '../home/components/footer/Footer';
 
@@ -17,13 +18,13 @@ export default function Login() {
             <p className="text-sm text-zinc-500">
               {`Dont't have an account? `}
               <a href="/register" className="hover:text-zinc-800 font-medium">
-                Register now
+                Register now.
               </a>
             </p>
           </div>
           <div className="flex flex-col items-center w-72">
-            <input className="mb-2 py-3 px-4 rounded-2xl bg-zinc-50 border w-full text-sm" placeholder="Email" />
-            <input className="mb-2 py-3 px-4 rounded-2xl bg-zinc-50 border w-full text-sm" placeholder="Password" />
+            <Input className="mb-2" placeholder="Email" />
+            <Input className="mb-2" placeholder="Password" />
             <Button text="Submit" className="w-full" />
             <span className="mb-4 mt-8 text-sm text-zinc-500">Or sign in with one of these providers:</span>
 
