@@ -10,7 +10,7 @@ export default function Button({
   iconClassName,
   ...rest
 }: IProps) {
-  let mainClassName = 'bg-zinc-800 text-white hover:opacity-75';
+  let mainClassName = 'bg-zinc-800 text-white hover:opacity-75 shadow border-2 border-white';
   let sizeClassName = 'h-10 px-6';
   let defaultIconClassName = 'text-xl';
 
@@ -19,11 +19,11 @@ export default function Button({
   }
 
   if (variant === 'tertiary') {
-    mainClassName = 'bg-white text-zinc-800 hover:bg-zinc-100 border';
+    mainClassName = 'bg-white text-zinc-800 hover:bg-zinc-100 border-2 border-white shadow';
   }
 
   if (variant === 'dark') {
-    mainClassName = 'text-white bg-zinc-900 hover:opacity-75';
+    mainClassName = 'text-zinc-200 bg-zinc-900 hover:opacity-75 border-zinc-800/80 border-2 shadow';
   }
 
   if (size === 'sm') {
