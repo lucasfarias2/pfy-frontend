@@ -17,6 +17,7 @@ const port = process.env.PORT || 3000;
     app.use(express.json());
     app.use(favicon('public/favicon.ico'));
     app.use(cookieParser());
+    app.use('/', express.static('public'));
 
     app.use('/api', apiRouter);
 
