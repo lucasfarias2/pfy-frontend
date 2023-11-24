@@ -15,7 +15,7 @@ export default function CloudNavbar() {
         </>
       }
       logoImgSrc="/logo-cloud.svg"
-      logoImgAlt="Packlify Logo"
+      logoImgAlt="Packlify Cloud Logo"
       logoLink="/cloud"
       controlLinks={
         <>
