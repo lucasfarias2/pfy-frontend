@@ -24,4 +24,7 @@ export default defineConfig({
       path: '/src/server/entries/cloud.tsx',
     },
   ]),
+  ssr: {
+    noExternal: ['react-icons'],
+  },
 });

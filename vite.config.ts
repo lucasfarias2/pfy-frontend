@@ -9,4 +9,7 @@ export default defineConfig({
     { name: 'dashboard', path: '/src/client/entries/dashboard/dashboard.html' },
     { name: 'cloud', path: '/src/client/entries/cloud/cloud.html' },
   ]),
+  ssr: {
+    noExternal: ['react-icons'],
+  },
 });
