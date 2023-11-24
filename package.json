@@ -23,7 +23,6 @@
   "dependencies": {
     "@packlify/client": "1.0.0",
     "@packlify/core": "1.0.0",
-    "@packlify/ui": "file:../../../packui/packui",
     "axios": "^1.6.2",
     "classnames": "^2.3.2",
     "cookie-parser": "^1.4.6",

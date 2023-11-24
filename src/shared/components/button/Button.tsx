@@ -19,7 +19,7 @@ export default function Button({
   }
 
   if (variant === 'tertiary') {
-    mainClassName = 'bg-white text-zinc-800 hover:bg-zinc-100 border-2';
+    mainClassName = 'bg-white text-zinc-800 hover:bg-zinc-100 border';
   }
 
   if (variant === 'dark') {
