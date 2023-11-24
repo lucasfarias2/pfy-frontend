@@ -7,8 +7,13 @@ import registerController from './controllers/register-controller.js';
 const appRouter = express.Router();
 
 appRouter.get('/', homeController.fetch, homeController.render);
+appRouter.get('/toolkits', homeController.fetch, homeController.render);
+appRouter.get('/contact', homeController.fetch, homeController.render);
 appRouter.get('/register', registerController.fetch, registerController.render);
 appRouter.get('/login', loginController.fetch, loginController.render);
 appRouter.get('/cloud', cloudController.fetch, cloudController.render);
+appRouter.get('/cloud/projects', cloudController.fetch, cloudController.render);
+appRouter.get('/cloud/users', cloudController.fetch, cloudController.render);
+appRouter.get('/cloud/settings', cloudController.fetch, cloudController.render);
 
 export default appRouter;

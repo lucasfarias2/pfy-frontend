@@ -22,6 +22,10 @@ export default function Button({
     mainClassName = 'bg-white text-zinc-800 hover:bg-zinc-100';
   }
 
+  if (variant === 'dark') {
+    mainClassName = 'text-white bg-zinc-900 hover:opacity-75';
+  }
+
   if (size === 'sm') {
     sizeClassName = 'h-8 text-xs px-4';
     defaultIconClassName = 'text-lg';
@@ -44,7 +48,7 @@ export default function Button({
 }
 
 interface IProps extends IComponent {
-  variant?: 'primary' | 'secondary' | 'tertiary';
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'dark';
   size?: 'sm' | 'md';
   icon?: React.ComponentType<IComponent>;
   iconClassName?: string;

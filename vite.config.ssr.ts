@@ -16,6 +16,10 @@ export default defineConfig({
       path: '/src/server/entries/register.tsx',
     },
     {
+      name: 'dashboard',
+      path: '/src/server/entries/dashboard.tsx',
+    },
+    {
       name: 'cloud',
       path: '/src/server/entries/cloud.tsx',
     },
