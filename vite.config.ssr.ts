@@ -8,6 +8,14 @@ export default defineConfig({
       path: '/src/server/entries/home.tsx',
     },
     {
+      name: 'login',
+      path: '/src/server/entries/login.tsx',
+    },
+    {
+      name: 'register',
+      path: '/src/server/entries/register.tsx',
+    },
+    {
       name: 'cloud',
       path: '/src/server/entries/cloud.tsx',
     },

@@ -4,7 +4,7 @@ import NavbarLink from './components/NavbarLink';
 export default function HomeNavbar() {
   return (
     <div className="flex h-20 bg-white py-4 px-32 justify-between relative">
-      <div className="flex items-center">
+      <div className="flex items-center flex-wrap">
         <a href="/">
           <img src="/logo.png" alt="logo" className="h-9 mr-12" />
         </a>
@@ -14,8 +14,12 @@ export default function HomeNavbar() {
         </div>
       </div>
       <div className="flex items-center">
-        <Button variant="primary" text="Create account" className="mr-2" />
-        <Button variant="tertiary" text="Login" />
+        <a href="/register">
+          <Button variant="primary" text="Create account" className="mr-2" />
+        </a>
+        <a href="/login">
+          <Button variant="tertiary" text="Login" />
+        </a>
       </div>
     </div>
   );
