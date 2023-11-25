@@ -26,11 +26,11 @@ const FormInput = React.forwardRef<HTMLInputElement, IProps>((props, ref) => {
             {...field}
             ref={ref}
             value={field.value || ''}
-            className={classNames(errors[name] ? 'mb-1 border border-red-500' : 'mb-2', inputProps.className)}
+            className={classNames(errors[name] ? 'mb-1 border border-red-600' : 'mb-2', inputProps.className)}
           />
         )}
       />
-      {errors[name] && <span className="mb-4 text-xs font-medium text-red-500">{errorMessage}</span>}
+      {errors[name] && <span className="mb-4 text-xs font-medium text-red-600">{errorMessage}</span>}
     </>
   );
 });
