@@ -3,7 +3,7 @@ import Page from '@/shared/components/page/Page';
 import Cloud from './Cloud';
 import CloudNavbar from './components/CloudNavbar';
 
-export default function Router(props: IViewProps) {
+export default function CloudRouter(props: IViewProps) {
   const { device, initialState } = props;
 
   return (

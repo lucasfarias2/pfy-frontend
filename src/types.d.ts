@@ -23,4 +23,9 @@ declare global {
     initialState: IInitialState;
     device: IDevice;
   }
+
+  export interface PFYUser {
+    id?: string;
+    email: string;
+  }
 }

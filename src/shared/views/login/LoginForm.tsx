@@ -34,7 +34,7 @@ export default function LoginForm() {
 
         await auth.signOut();
 
-        // window.location.href = '/dashboard';
+        window.location.href = '/dashboard';
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (e: any) {

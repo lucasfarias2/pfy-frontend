@@ -1,5 +1,5 @@
 {
-  "name": "packlify-cloud-web",
+  "name": "packlify-frontend",
   "version": "1.0.0",
   "type": "module",
   "main": "./src/index.ts",
@@ -22,8 +22,9 @@
   "license": "MIT",
   "dependencies": {
     "@packlify/client": "1.0.0",
-    "@packlify/core": "1.0.0",
+    "@packlify/core": "^1.0.1",
     "@packlify/mocks": "^0.0.4",
+    "@tanstack/react-query": "^5.8.7",
     "axios": "^1.6.2",
     "classnames": "^2.3.2",
     "cookie-parser": "^1.4.6",
