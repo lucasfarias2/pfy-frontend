@@ -1,4 +1,5 @@
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import axios from 'axios';
+import { getAuth, inMemoryPersistence, signInWithEmailAndPassword } from 'firebase/auth';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import FormInput from '@/components/form/FormInput';
 import firebaseClient from '@/config/firebase';
@@ -6,6 +7,8 @@ import Button from '@/shared/components/button/Button';
 
 export default function LoginForm() {
   const auth = getAuth(firebaseClient);
+
+  auth.setPersistence(inMemoryPersistence);
 
   const {
     setError,
@@ -22,11 +25,22 @@ export default function LoginForm() {
 
       if (userCredential) {
         console.log('userCredential', userCredential);
+        const token = await userCredential.user.getIdToken();
+
+        // TODO: add csrf token
+        const { data } = await axios.post('/api/auth/login', { token });
+
+        console.log('user logged in and verified ', data);
+
+        await auth.signOut();
+
         // window.location.href = '/dashboard';
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (e: any) {
-      // toast
+      if (e?.message?.includes('auth/invalid-login-credentials')) {
+        setError('email', { type: 'custom', message: 'Invalid email or password' });
+      }
     }
   };
 

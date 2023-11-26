@@ -2,9 +2,9 @@ import { FcGoogle } from 'react-icons/fc';
 import { SiGithub } from 'react-icons/si';
 import Button from '@/shared/components/button/Button';
 import Container from '@/shared/components/container/Container';
-import Input from '@/shared/components/input/Input';
 import Page from '@/shared/components/page/Page';
 import Footer from '../home/components/footer/Footer';
+import LoginForm from './LoginForm';
 
 export default function Login() {
   return (
@@ -24,9 +24,7 @@ export default function Login() {
             </p>
           </div>
           <div className="flex flex-col items-center w-72">
-            <Input className="mb-2" placeholder="Email" />
-            <Input className="mb-2" placeholder="Password" />
-            <Button text="Submit" className="w-full" />
+            <LoginForm />
             <span className="my-4 text-sm text-zinc-500">Or sign in with one of these providers:</span>
 
             <Button text="Google" className="mb-2 w-full" variant="tertiary" icon={FcGoogle} />

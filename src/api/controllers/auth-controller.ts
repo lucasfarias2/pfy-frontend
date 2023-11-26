@@ -21,4 +21,23 @@ const signup = async (req: Request, res: Response) => {
   }
 };
 
-export default { signup };
+const login = async (req: Request, res: Response) => {
+  const { email, password, token } = req.body;
+
+  try {
+    const { data } = await axios.post(`http://localhost:8080/api/v1/auth/login`, {
+      token,
+    });
+
+    res.cookie('session', data, options);
+
+    console.log('data from backend', data);
+
+    res.send(data);
+  } catch (err) {
+    console.log(err);
+    res.status(401).send('Error signing in');
+  }
+};
+
+export default { signup, login };
