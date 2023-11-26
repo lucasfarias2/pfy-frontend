@@ -1,7 +1,8 @@
+import type { PacklifyServerRequest, PacklifyServerResponse } from '@packlify/core';
 import { dehydrate, QueryClient } from '@tanstack/react-query';
-import type { NextFunction, Request, Response } from 'express';
+import type { NextFunction } from 'express';
 
-const withQueryMiddleware = (req: Request, res: Response, next: NextFunction) => {
+const withQueryMiddleware = (req: PacklifyServerRequest, res: PacklifyServerResponse, next: NextFunction) => {
   res.queries = {};
 
   res.loadQueryKeys = queryKeys => {

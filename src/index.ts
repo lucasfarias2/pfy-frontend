@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 
 (async () => {
   try {
-    const app = await createServer();
+    const app = await createServer({ hmrPort: 3001 });
 
     app.use(express.json());
     app.use(favicon('public/favicon.ico'));

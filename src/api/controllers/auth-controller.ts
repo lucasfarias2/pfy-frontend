@@ -1,9 +1,9 @@
+import type { PacklifyServerRequest, PacklifyServerResponse } from '@packlify/core';
 import axios from 'axios';
-import type { Request, Response } from 'express';
 
 const options = { maxAge: 60 * 60 * 24 * 5 * 1000, httpOnly: true, secure: true, path: '/' };
 
-const signup = async (req: Request, res: Response) => {
+const signup = async (req: PacklifyServerRequest, res: PacklifyServerResponse) => {
   const { email, password } = req.body;
 
   try {
@@ -21,7 +21,7 @@ const signup = async (req: Request, res: Response) => {
   }
 };
 
-const login = async (req: Request, res: Response) => {
+const login = async (req: PacklifyServerRequest, res: PacklifyServerResponse) => {
   const { token } = req.body;
 
   try {
@@ -38,14 +38,14 @@ const login = async (req: Request, res: Response) => {
   }
 };
 
-const currentUser = async (req: Request, res: Response) => {
+const currentUser = async (req: PacklifyServerRequest, res: PacklifyServerResponse) => {
   if (!req.cookies.session) {
     return res.status(401).send('No session found');
   }
 
   try {
     const { data } = await axios.get(`http://localhost:8080/api/v1/auth/user`, {
-      headers: { Authorization: `Bearer ${req.cookies.session}` },
+      headers: { session: req.cookies.session },
     });
 
     res.send(data);

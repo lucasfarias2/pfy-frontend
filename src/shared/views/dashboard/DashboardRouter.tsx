@@ -8,7 +8,7 @@ export default function Router(props: IViewProps) {
   return (
     <Page initialState={initialState} device={device}>
       <Routes>
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard initialState={initialState} device={device} />} />
       </Routes>
     </Page>
   );

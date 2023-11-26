@@ -1,16 +1,17 @@
+import type { PacklifyServerRequest, PacklifyServerResponse } from '@packlify/core';
 import axios from 'axios';
-import type { NextFunction, Request, Response } from 'express';
+import type { NextFunction } from 'express';
 import EQueryKeys from '../../shared/queries/query-keys.js';
 
-const getCurrentUser = async (req: Request, res: Response, next: NextFunction) => {
+const getCurrentUser = async (req: PacklifyServerRequest, res: PacklifyServerResponse, next: NextFunction) => {
   if (!req.cookies.session) {
     next();
     return;
   }
 
   try {
-    const { data } = await axios.get(`${process.env.BACKEND_URL}/auth/user/`, {
-      headers: { Authorization: `Bearer ${req.cookies.session}` },
+    const { data } = await axios.get('http://localhost:8080/api/v1/auth/user', {
+      headers: { session: req.cookies.session },
     });
 
     const { email } = data as PFYUser;
@@ -24,7 +25,7 @@ const getCurrentUser = async (req: Request, res: Response, next: NextFunction) =
   }
 };
 
-const requireAuth = (req: Request, res: Response, next: NextFunction) => {
+const requireAuth = (req: PacklifyServerRequest, res: PacklifyServerResponse, next: NextFunction) => {
   if (!req.user) {
     res.redirect('/login');
   } else {
@@ -40,7 +41,7 @@ const requireAuth = (req: Request, res: Response, next: NextFunction) => {
 //   }
 // };
 
-const requireGuest = (req: Request, res: Response, next: NextFunction) => {
+const requireGuest = (req: PacklifyServerRequest, res: PacklifyServerResponse, next: NextFunction) => {
   if (req.user) {
     res.redirect('/account');
   } else {
