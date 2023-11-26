@@ -4,8 +4,11 @@ import dashboardController from './controllers/dashboard-controller.js';
 import homeController from './controllers/home-controller.js';
 import loginController from './controllers/login-controller.js';
 import registerController from './controllers/register-controller.js';
+// import withQueryMiddleware from './middlewares/with-query-middleware.js';
 
 const appRouter = express.Router();
+
+// appRouter.use(withQueryMiddleware);
 
 appRouter.get('/', homeController.fetch, homeController.render);
 appRouter.get('/toolkits', homeController.fetch, homeController.render);

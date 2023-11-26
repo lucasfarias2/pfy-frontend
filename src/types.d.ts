@@ -1,6 +1,20 @@
 import type { TDeviceType } from '@packlify/core';
 
 declare global {
+  namespace Express {
+    interface Request {
+      device?: IDevice;
+      user: PFYUser;
+    }
+
+    interface Response {
+      renderView: (pageName: string, props?: unknown) => void;
+      loadQueryKeys: (queryKeys: string[]) => Response;
+      queries: Record<string, unknown>;
+      isProd?: boolean;
+    }
+  }
+
   export interface IDevice {
     type?: TDeviceType;
   }
@@ -22,5 +36,10 @@ declare global {
   export interface IViewProps {
     initialState: IInitialState;
     device: IDevice;
+  }
+
+  export interface PFYUser {
+    id?: string;
+    email: string;
   }
 }

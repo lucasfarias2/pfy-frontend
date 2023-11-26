@@ -22,7 +22,7 @@ const signup = async (req: Request, res: Response) => {
 };
 
 const login = async (req: Request, res: Response) => {
-  const { email, password, token } = req.body;
+  const { token } = req.body;
 
   try {
     const { data } = await axios.post(`http://localhost:8080/api/v1/auth/login`, {
@@ -31,8 +31,6 @@ const login = async (req: Request, res: Response) => {
 
     res.cookie('session', data, options);
 
-    console.log('data from backend', data);
-
     res.send(data);
   } catch (err) {
     console.log(err);
@@ -40,4 +38,21 @@ const login = async (req: Request, res: Response) => {
   }
 };
 
-export default { signup, login };
+const currentUser = async (req: Request, res: Response) => {
+  if (!req.cookies.session) {
+    return res.status(401).send('No session found');
+  }
+
+  try {
+    const { data } = await axios.get(`http://localhost:8080/api/v1/auth/user`, {
+      headers: { Authorization: `Bearer ${req.cookies.session}` },
+    });
+
+    res.send(data);
+  } catch (err) {
+    console.log(err);
+    res.status(401).send('Error fetching currentUser');
+  }
+};
+
+export default { signup, login, currentUser };

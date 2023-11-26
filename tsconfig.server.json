@@ -17,6 +17,7 @@
   "exclude": ["node_modules", "dist"],
   "ts-node": {
     "esm": true,
+    "experimentalSpecifierResolution": "node",
     "require": ["tsconfig-paths/register", "dotenv/config"]
   }
 }

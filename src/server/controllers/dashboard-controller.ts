@@ -1,12 +1,15 @@
 import type { PacklifyServerRequest, PacklifyServerResponse } from '@packlify/core';
 import type { NextFunction } from 'express';
+import EQueryKeys from '../../shared/queries/query-keys.js';
 
 const fetch = async (req: PacklifyServerRequest, res: PacklifyServerResponse, next: NextFunction) => {
   next();
 };
 
 const render = (req: PacklifyServerRequest, res: PacklifyServerResponse) => {
-  res.renderView('dashboard', { initialState: res.locals.initialState, device: req.device });
+  res
+    .loadQueryKeys([EQueryKeys.User])
+    .renderView('dashboard', { initialState: res.locals.initialState, device: req.device });
 };
 
 export default { render, fetch };
